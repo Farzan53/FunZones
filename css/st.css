@@ -1,0 +1,425 @@
+ /* Base & Navbar */
+    body { background: whitesmoke; font-family: 'Times New Roman', Times, serif; }
+   
+    /* Navbar Styles */
+    .navbar-custom {
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+      }
+  
+      .navbar-nav .nav-link {
+        color: #ffd700 !important;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+  
+      .dropdown-menu {
+        backdrop-filter: blur(12px);
+        background-color: rgba(0, 0, 0, 0.75);
+        border: none;
+        border-radius: 12px;
+        padding: 10px 0;
+        max-width: 260px;
+      }
+      .dropdown-item {
+        white-space: normal;
+        padding: 10px 20px;
+        color: #f8f9fa !important;
+        font-size: 1rem;
+      }
+    .dropdown-item:hover {
+        background-color: rgba(255, 215, 0, 0.2);
+      }
+  
+/* Carousel Styling */
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+      }
+  
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.4);         
+    backdrop-filter: blur(1px);            
+    border-radius: 16px;                   
+    padding: 20px 30px;                  
+    display: inline-block;                 
+    max-width: 80%;                        
+    margin: auto;
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    /* box-shadow: 0 8px 20px rgba(0,0,0,0.25); */
+}
+    .carousel-caption:hover {
+     box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4);
+}
+
+
+  
+      .carousel-caption h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: #FFD700;
+        font-weight: bold;
+         margin-bottom: 0.5rem;
+        } 
+      
+  
+      .carousel-caption h1 span {
+        color: #fff;
+      }
+  
+      .carousel-caption p {
+        font-style: italic;
+        font-size: 1.4rem;
+        font-family: 'Roboto', sans-serif;
+        color: #fff;
+         font-size: 1.1rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+      }
+      @media (max-width: 768px) {
+        .carousel-caption {
+          max-width: 90%;
+          left: 5%;
+          right: 5%;
+          bottom: 10%;
+          transform: none;
+          text-align:center;
+          padding: 20px;
+        }
+  
+        .carousel-caption h1 {
+          font-size: 2.2rem;
+        }
+  
+        .carousel-caption p {
+          font-size: 1rem;
+        }
+      }
+  
+    
+    /* Sections */
+    section { padding: 60px 20px; }
+    .section-title {
+      font-family:'Playfair Display', serif;
+      font-size:2.2rem; color:#0a0f3c; margin-bottom:.5rem;
+    }
+    .section-sub { color:#555; margin-bottom:2rem; }
+
+    /* Overview */
+    .overview p { max-width:800px; margin:auto; color:#333; line-height:1.6; }
+
+    /* Calendar */
+
+    h1 {
+      margin: 20px;
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 2.2rem;
+     margin-bottom: 20px;
+    }
+
+   .calendar-controls {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    }
+
+   #yearSelect, #monthSelect {
+     padding: 10px;
+     font-size: 16px;
+     margin:   0px 16px;
+     align-items: center;
+     border: 2px solid #0d2c6d;
+     border-radius: 5px ;
+    }
+
+   .calendar {
+     display: grid;
+     grid-template-columns: repeat(7, 1fr);
+     gap: 10px;
+     max-width: 600px;
+     margin: 0 auto;
+     animation: fadeInUp 0.8s ease-in-out both;
+     transform-origin: top;
+    }
+
+   .day {
+     background-color: #e0e0e0;
+     padding: 15px;
+     border-radius: 6px;
+     font-size: 16px;
+    }
+
+   .event-day {
+     background-color: #0d2c6d;
+     color: #fff;
+     cursor: pointer;
+     font-weight: bold;
+     border: 2px solid #ffd700;
+     box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    }
+    .calendar .day, .calendar .event-day {
+    animation: cellPop 0.5s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .calendar .day:hover,
+    .calendar .event-day:hover {
+     transform: scale(1.06);
+     }
+
+   .event-modal {
+      display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgba(0,0,0,0.6);
+     align-items: center;
+     justify-content: center;
+      
+      
+   }
+   
+   .modal-content {
+     background: white;
+     color: #0d2c6d;
+     padding: 30px;
+     max-width: 400px;
+     width: 90%;
+     border-radius: 8px;
+     text-align: left;
+     position: relative;
+     animation: glowPop 0.5s ease forwards;
+     box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4);
+     border: 2px solid #ffd700;
+   }
+
+   .close {
+     position: absolute;
+     top: 10px;
+     right: 15px;
+     font-size: 22px;
+     cursor: pointer;
+   }
+
+   @media (max-width: 576px) {
+  .calendar-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #yearSelect, #monthSelect {
+    margin: 8px 0;
+    width: 80%;
+  }
+}
+   /* Fade-in keyframe */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Cell bounce-in effect */
+@keyframes cellPop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+    /* Hours */
+    .hours .fa-clock { color:#ffd700; margin-right:.5rem; }
+    .hours li { margin-bottom:.75rem; font-weight:500; }
+
+    /* Premium Ticket Box Styling */
+.pricing-section {
+  background:white;
+  padding: 60px 20px;
+}
+.ticket-box {
+  position: relative;
+  overflow: hidden;
+  height: 260px;
+  border-radius: 20px;
+  background-blend-mode: overlay;
+  backdrop-filter: blur(8px);
+  padding: 30px;
+  color: white; /* make text white */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.ticket-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* overlay color */
+  z-index: 0;
+}
+
+.ticket-box * {
+  position: relative;
+  z-index: 1;
+}
+
+.ticket-box h5 {
+  color:#f1d206;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+.ticket-box .price {
+  font-size: 2rem;
+  font-weight: 800;
+  color:azure;
+}
+.ticket-box .desc {
+  font-weight:bold ;
+  font-size: 1rem;
+  color: #d0bf02;
+}
+.btn-buy-now {
+  display: block;
+  margin: 20px auto 0 auto;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(145deg, #FFD700, #e6c200);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  color: #111;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+  white-space: nowrap;
+}
+.btn-buy-now:hover {
+  background: linear-gradient(145deg, #ffe85c, #ffd700);
+  box-shadow:
+    0 0 25px rgba(255, 215, 0, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.6);
+  transform: scale(1.05);
+}
+
+@media (max-width: 767px) {
+  .ticket-box {
+    height: auto;
+    padding: 20px;
+  }
+
+  .pricing-section .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* ticket cards images */
+.wrist-band {
+  background: url('../assets/wrist-bands.jpeg') center/cover no-repeat;
+}
+.entry-ticket {
+  background: url('../assets/ticket.jpeg') center/cover no-repeat;
+}
+.season-pass {
+  background: url('../assets/passes.jpeg') center/cover no-repeat;;
+}
+
+    /* Facilities */
+    .facilities .fa-stack { font-size:2rem; color:#ffd700; }
+
+    .lost-found-section {
+  background: linear-gradient(to right, #0a0f3c, #111c3c); 
+}
+
+.lost-found-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.lost-found-box ul li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: #0a0f3c; 
+}
+
+.lost-heading {
+  color: #FFD700; 
+}
+
+
+.section-sub {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+section h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+} 
+
+@media (max-width: 576px) {
+  .facilities .col-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .lost-found-box {
+    padding: 20px;
+  }
+
+  .lost-found-box ul li {
+    font-size: 1rem;
+  }
+}
+
+   /* Virtual Tour */
+.virtual-tour iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.footer-custom {
+    background: rgba(0, 0, 0, 0.9);
+  }

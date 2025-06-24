@@ -1,0 +1,236 @@
+ body { 
+     background: whitesmoke; 
+     font-family: 'Times New Roman', Times, serif; 
+  }
+  .navbar-custom {
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent black */
+    backdrop-filter: blur(10px);
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .navbar-nav .nav-link {
+    color: #ffd700 !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  .dropdown-menu {
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.75);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 0;
+    max-width: 260px;
+  }
+
+  .dropdown-item {
+    white-space: normal;
+    padding: 10px 20px;
+    color: #f8f9fa !important;
+    font-size: 1rem;
+  }
+
+  .dropdown-item:hover {
+    background-color: rgba(255, 215, 0, 0.2);
+  }                                
+
+  
+  /* for park bakground */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+        background:off whitesmoke;
+      margin: 0;
+      padding: 20px;
+    } 
+
+    h1 {
+      text-align: center;
+      color: rgb(183, 194, 35);
+      font-style: italic;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+    }
+
+    /* CAROUSEL STYLING */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.849);
+    }
+
+    .carousel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+.carousel-text {
+  position: absolute;
+  bottom: 200px;
+  left: 260px;
+  color: #ffd700; 
+  font-size: 60px;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  text-shadow:
+    0 0 8px #fffbee,
+    0 0 15px #fffbee,
+    0 0 20px #fffbee,
+    0 0 30px #fffdaa,
+    0 0 40px #fffdaa,
+    0 0 50px #fffdaa,
+    0 0 60px #fffa87; /* Yellow glow */
+  animation: glow 2.5s ease-in-out infinite alternate, bounce 2s ease-in-out infinite;
+  transform-origin: bottom center;
+  font-style: italic;
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 8px #fffbee,
+      0 0 15px #fffbee,
+      0 0 20px #fffbee,
+      0 0 30px #fffdaa,
+      0 0 40px #fffdaa,
+      0 0 50px #fffdaa,
+      0 0 60px #fffa87;
+  }
+  to {
+    text-shadow:
+      0 0 15px #fffbee,
+      0 0 25px #fffbee,
+      0 0 35px #fffbee,
+      0 0 45px #fffdaa,
+      0 0 55px #fffdaa,
+      0 0 65px #fffdaa,
+      0 0 80px #fffa87;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+    /* Flip card grid */
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Flip Card Styles */
+    .flip-card {
+      background-color: transparent;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+     
+    }
+
+    .flip-card:hover .flip-card-inner,
+    .flip-card:focus-within .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      backface-visibility: hidden;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .flip-card-front {
+      background-color: white;
+    }
+
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+.flip-card-back {
+  background: linear-gradient(135deg, #fff9e6, #fff0c1);
+  color: #333;
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+   .flip-card-back h2 {
+  color:#ffd700 ; 
+  text-shadow:
+    0 0 15px #fffbee,   /* soft off-white glow */
+    0 0 15px #fffbee,
+    0 0 15px #fffa87,  /* yellow glow */
+    0 0 20px #fffa87;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 10px;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Optional: Glow intensify on hover/focus */
+.flip-card:hover .flip-card-back h2,
+.flip-card:focus-within .flip-card-back h2 {
+  text-shadow:
+    0 0 20px #fffbee,
+    0 0 40px #fffbee,
+    0 0 40px #fffa87,
+    0 0 40px #fffa87,
+    0 0 60px #fffa87;
+}
+    .flip-card-back p {
+      font-size: 20px;
+      color: rgba(26, 26, 184, 0.836);
+      text-shadow:1px 1px 3px rgba(13, 136, 207, 0.9); ;
+    }
+
+    .carousel-description {
+  text-align: center;
+  font-size: 18px;
+  color: #fee229;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+  margin-top: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  font-style: italic;
+}
+
+/* FOTTER STYLING */
+ 
+
+
+.footer-custom {
+background-color: rgba(0, 0, 0, 0.9);
+}
